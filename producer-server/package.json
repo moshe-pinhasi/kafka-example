@@ -1,0 +1,18 @@
+{
+  "name": "medium-00-boiler-plate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "producer": "NODE_ENV=development nodemon server.js"
+  },
+  "author": "Pankaj Panigrahi",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "kafkajs": "^1.15.0",
+    "nodemon": "^2.0.2"
+  },
+  "devDependencies": {}
+}
