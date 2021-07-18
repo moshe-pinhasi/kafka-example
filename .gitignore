@@ -1,2 +1,2 @@
-./consumer-server/node_modules/
-./producer-server/node_modules/
+consumer-server/node_modules
+producer-server/node_modules
