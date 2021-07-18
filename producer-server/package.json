@@ -1,12 +1,13 @@
 {
-  "name": "medium-00-boiler-plate",
+  "name": "producer-service",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "producer": "NODE_ENV=development nodemon server.js"
+    "producer": "BROKER=localhost:29092 nodemon server.js",
+    "producer:docker": " nodemon server.js"
   },
-  "author": "Pankaj Panigrahi",
+  "author": "Moshe Pinhasi",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",

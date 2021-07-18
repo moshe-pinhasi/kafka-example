@@ -1,0 +1,15 @@
+version: '2'
+services:
+  producer:
+    container_name: producer-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: npm run producer:docker
+    volumes:
+      - .:/usr/app
+    ports:
+      - "3400:3400"
+    environment:
+      NODE_ENV: "development"
+      BROKER: kafka:9092

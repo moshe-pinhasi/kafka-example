@@ -2,7 +2,9 @@ const { Kafka } = require('kafkajs')
  
 const kafka = new Kafka({
   clientId: 'my-kafka-app',
-  brokers: ["localhost:29092"]
+  // brokers: ["localhost:29092"],
+  // brokers: ["kafka:9092"]
+  brokers: [process.env.BROKER]
 })
  
 const producer = kafka.producer()
@@ -22,16 +24,16 @@ module.exports = {
   connect() {
     connector = producer.connect()
 
-    connector
-      .then(() => console.log('success!'))
-      .catch((err) => {
-        console.log('error', err)
-        throw err
-      })
+    // connector
+    //   .then(() => console.log('success!'))
+    //   .catch((err) => {
+    //     console.log('error', err)
+    //     throw err
+    //   })
   }
 }
 
 process.on('exit', (code) => {
-  producer.disconnect()
+  // producer.disconnect()
   console.log(`Closing producer`);
 });

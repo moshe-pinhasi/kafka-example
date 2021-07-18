@@ -5,7 +5,7 @@ const kafka = new Kafka({
   brokers: ["localhost:29092"]
 })
 
-const consumer = kafka.consumer({ groupId: 'test2-group' })
+const consumer = kafka.consumer({ groupId: process.env.GROUP_ID })
 
 module.exports = {
   connect: () => {
