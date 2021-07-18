@@ -21,3 +21,63 @@ services:
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+  producer:
+    container_name: producer-server
+    build: .
+    image: moshe/producer-server
+    command: npm run producer
+    volumes:
+      - .:/usr/app
+      - /usr/app/node_modules
+    ports:
+      - "3400:3400"
+    depends_on:
+      - kafka
+    environment:
+      NODE_ENV: "development"
+
+  consumer-event-1:
+    container_name: consumer-event-1
+    build: .
+    image: moshe/consumer-event-1
+    command: npm run consumer
+    volumes:
+      - .:/usr/app
+      - /usr/app/node_modules
+    ports:
+      - "3500:3500"
+    depends_on:
+      - kafka
+    environment:
+      NODE_ENV: "development"
+      
+  consumer-notification-1:
+    container_name: consumer-notification-1
+    build: .
+    image: moshe/consumer-notification-1
+    command: npm run consumer
+    volumes:
+      - .:/usr/app
+      - /usr/app/node_modules
+    ports:
+      - "3600:3600"
+    depends_on:
+      - kafka
+    environment:
+      NODE_ENV: "development"
+
+  consumer-notification-2:
+    container_name: consumer-notification-2
+    build: .
+    image: moshe/consumer-notification-2
+    command: npm run consumer
+    volumes:
+      - .:/usr/app
+      - /usr/app/node_modules
+    ports:
+      - "3700:3700"
+    depends_on:
+      - kafka
+    environment:
+      NODE_ENV: "development"
