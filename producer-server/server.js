@@ -9,7 +9,7 @@ const app = express()
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-
+console.log('test')
 const topicNames = ["notification", 'event']
 
 MQService.connect()
