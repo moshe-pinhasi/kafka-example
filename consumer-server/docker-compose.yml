@@ -1,0 +1,16 @@
+version: '2'
+services:
+  producer:
+    container_name: consumer-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: npm run consumer:prod
+    volumes:
+      - .:/usr/app
+    ports:
+      - "3400:3400"
+    environment:
+      NODE_ENV: "development"
+      BROKER: "${KAFKA_BROKER}"
+      GROUP_ID: 1
