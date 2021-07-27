@@ -12,4 +12,4 @@ services:
       - "3400:3400"
     environment:
       NODE_ENV: "development"
-      BROKER: kafka:9092
+      BROKER: "${KAFKA_BROKER}"
