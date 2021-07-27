@@ -9,7 +9,7 @@ services:
     volumes:
       - .:/usr/app
     ports:
-      - "3400:3400"
+      - "3401:3400"
     environment:
       NODE_ENV: "development"
       BROKER: "${KAFKA_BROKER}"
