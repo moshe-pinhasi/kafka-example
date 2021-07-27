@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "consumer": "NODE_ENV=development GROUP_ID=c1 nodemon server.js"
+    "consumer": "NODE_ENV=development GROUP_ID=c1 nodemon server.js",
+    "consumer:prod": "node server.js"
   },
   "author": "Pankaj Panigrahi",
   "license": "ISC",
