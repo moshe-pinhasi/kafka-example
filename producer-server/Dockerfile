@@ -11,5 +11,3 @@ RUN npm install
 
 # Bundle app source
 COPY . .
-
-COPY . .
