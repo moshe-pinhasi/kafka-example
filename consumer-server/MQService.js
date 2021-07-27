@@ -2,7 +2,7 @@ const { Kafka } = require('kafkajs')
 
 const kafka = new Kafka({
   clientId: 'my-kafka-app',
-  brokers: ["localhost:29092"]
+  brokers: [process.env.BROKER]
 })
 
 const consumer = kafka.consumer({ groupId: process.env.GROUP_ID })
